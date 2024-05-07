@@ -30,3 +30,8 @@ header nav .settings-profile-container {
     display: flex;
     justify-content: space-between;
 }
+
+.board-area {
+    display: flex;
+    gap: 1em;
+}

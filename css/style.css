@@ -72,6 +72,7 @@ header nav .svg{
 .main-board-area {
     width: 95vw;
     margin: 5em auto;
+    /* overflow-x: auto; */
 }
 
 .main-board {
@@ -88,6 +89,7 @@ header nav .svg{
 .board-area .add-new-list {
     width: 13.75em; /*300px*/
     line-height: 2.5em;
+    height: fit-content;
     border-radius: 0.5em;
     border: none;
     cursor: pointer;
@@ -117,3 +119,93 @@ header nav .svg{
     color: var(--main-blue-light);
     font-size: 16px;
 }
+
+/* NEW CARD LIST */
+.new-card-list {
+    width: 18.75em; /*300px*/
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    color: var(--bg-neutral-600);
+    padding: 20px;
+}
+
+.new-card-list div {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* This is the add task sub button */
+.new-card-list .add-task-div {
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.new-card-list .add-task-div:hover .add-task-span {
+    color: var(--main-blue-light);
+}
+
+.new-card-list .add-task-div .fa-plus{
+    padding: 2px;
+    border-radius: 100px;
+}
+
+.new-card-list .add-task-div:hover .fa-plus {
+    color: white;
+    background-color: var(--main-blue-light);
+}
+
+.new-card-list .todo-parent{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 10px;
+    border: 2px solid plum;
+}
+
+.new-card-list .todo-parent ul li {
+    width: 100%;
+    /* position: relative; */
+}
+
+
+
+ .new-card-list .todo-parent ul li i {
+    transform: translate(25px, -12px);
+}
+
+.new-card-list .todo-parent ul li input {
+    appearance: none;
+    transform: translate(5px, -6px);
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 100px;
+    position: relative;
+}
+
+.new-card-list .todo-parent ul li input:checked::before{
+    position: absolute;
+    left: 4px;
+    content: '✔';
+    color: var(--main-blue-light);
+    /* display: none; */
+}
+
+.new-card-list .todo-parent .text-area-one {
+    appearance: none;
+    resize: none;
+    height: auto;
+    display: inline-block;
+    border: none;
+    transform: translateX(15px);
+    outline: none;
+    font-family: calibri;
+    font-size: 1.1em;
+} 
