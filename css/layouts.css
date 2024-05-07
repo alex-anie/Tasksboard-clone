@@ -1,0 +1,24 @@
+/* Slip the nav into 3 column grid */
+header nav 
+{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: start;
+    padding: 0 2em;
+    align-items: center;
+    height: 100%;
+}
+
+
+header nav .logo-container, 
+header nav .settings-profile-container 
+{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header nav .settings-profile-container {
+    justify-content: flex-end;
+    gap: 2em;
+}

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TasksBoard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/settings.css">
     <link rel="stylesheet" href="css/utility.css">
     <link rel="stylesheet" href="css/layouts.css">
@@ -18,16 +20,16 @@
                 <section class="logo-container">
                     <!-- Hamburger Icon -->
                        <div class="hamburger-icon-wrapper">
-                            <img src="/icons/hamburger.svg" alt="">
+                            <i class="fa-solid fa-bars svg"></i>
                        </div>
 
                        <!-- Logo -->
                        <div class="logo-wrapper">
                             <a href="">
                                 <span>
-                                    <img src="/icons/tasksboard-logo.svg" alt="">
+                                    <img src="/icons/tasksboard-logo.svg" alt=""  class="cs-svg">
                                 </span>
-                                <span>
+                                <span class="logo-text">
                                     TasksBoard
                                 </span>
                             </a>
@@ -38,7 +40,8 @@
                 <section class="search-container">
                     <div>
                         <span>
-                            <img src="/icons/magnifying-glass.svg" alt="">
+                            <i class="fa-solid fa-magnifying-glass svg"></i>
+                            <input type="search" name="search" id="search" placeholder="Search">
                         </span>
                     </div>
                 </section>
@@ -48,21 +51,21 @@
                     <!-- Settings Icons -->
                     <div class="settings-wrapper">
                         <span>
-                            <img src="./icons/cloud.svg" alt="">
+                            <i class="fa-solid fa-rotate-right svg"></i>
                         </span>
                         <span>
-                            <img src="/icons/vertical-view.svg" alt="">
+                            <i class="fa-solid fa-grip svg"></i>
                         </span>
                         <span>
-                            <img src="/icons/settings.svg" alt="">
+                            <i class="fa-solid fa-gear svg"></i>
                         </span>
                     </div>
 
                     <!-- Profile Pics -->
                     <div class="profile-wrapper">
-                        <span>
-                            <img src="/images/alex.png" alt="">
-                        </span>
+                        <div>
+                            <img src="/images/alex.png" alt=""  class="img ">
+                        </div>
                     </div>
                 </section>
             </nav>
