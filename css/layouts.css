@@ -22,3 +22,11 @@ header nav .settings-profile-container {
     justify-content: flex-end;
     gap: 2em;
 }
+
+/* Main Board */
+
+/* main-board heading */
+.main-board div {
+    display: flex;
+    justify-content: space-between;
+}
