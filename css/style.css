@@ -166,7 +166,9 @@ header nav .svg{
     justify-content: space-between;
     gap: 5px;
     margin-top: 10px;
-    border: 2px solid plum;
+    padding: 3px;
+    border-radius: 10px;
+    transition: all 0.7s ease;
 }
 
 .new-card-list .todo-parent ul li {
@@ -177,12 +179,12 @@ header nav .svg{
 
 
  .new-card-list .todo-parent ul li i {
-    transform: translate(25px, -12px);
+    transform: translate(25px, -14px);
 }
 
 .new-card-list .todo-parent ul li input {
     appearance: none;
-    transform: translate(5px, -6px);
+    transform: translate(5px, -12px);
     width: 20px;
     height: 20px;
     border: 1px solid black;
@@ -195,17 +197,26 @@ header nav .svg{
     left: 4px;
     content: '✔';
     color: var(--main-blue-light);
-    /* display: none; */
 }
 
-.new-card-list .todo-parent .text-area-one {
+.new-card-list .todo-parent .text-area-one, 
+.new-card-list .todo-parent .text-area-two  {
     appearance: none;
     resize: none;
     height: auto;
-    display: inline-block;
     border: none;
     transform: translateX(15px);
     outline: none;
     font-family: calibri;
     font-size: 1.1em;
-} 
+    background-color: transparent;
+}
+
+.new-card-list .todo-parent .text-area-two  {
+    font-size: 0.8em;
+    
+}
+
+.new-card-list .todo-parent:focus-within {
+    background-color: var(--bg-neutral-100);
+}

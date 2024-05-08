@@ -2,6 +2,8 @@
 const addListButton = document.querySelector('#addNewList');
 const boardAreaEl = document.querySelector('#boardArea');
 
+
+
 addListButton.addEventListener('click', createNewList)
 
 function createNewList(){
@@ -52,7 +54,6 @@ function createNewList(){
         const textarea1 = document.createElement('textarea');
         const textarea2 = document.createElement('textarea');
 
-        console.log(todoParentDiv)
         asideEl.appendChild(todoParentDiv);
         todoParentDiv.appendChild(ul);
         ul.appendChild(li);
@@ -72,13 +73,44 @@ function createNewList(){
         checkboxEl.setAttribute('class', 'checkbox');
         checkboxEl.setAttribute('name', 'checkbox');
 
+        //First Text Area Element
         textarea1.setAttribute('class', 'text-area-one');
         textarea1.setAttribute('cols', '25');
         textarea1.setAttribute('wrap', 'hard');
-        textarea1.setAttribute('rows', 'auto');
-        textarea1.setAttribute('maxlength', '15');
-        // textarea1.setAttribute('rows', '10');
+        textarea1.setAttribute('rows', '2');
+        textarea1.setAttribute('maxlength', '300');
+        textarea1.setAttribute('placeholder', 'Title');
 
+        // Send Text Area Element
         textarea2.setAttribute('class', 'text-area-two');
+        textarea2.setAttribute('cols', '25');
+        textarea2.setAttribute('wrap', 'hard');
+        textarea2.setAttribute('rows', '2');
+        textarea2.setAttribute('maxlength', '600');
+        textarea2.setAttribute('placeholder', 'Details');
+
+        const cardTitleInput = document.querySelectorAll('.text-area-one');
+        const cardDetailInput = document.querySelectorAll('.text-area-two');
+        
+        cardTitleInput.forEach((item)=>{
+            item.addEventListener('input', setHeight)
+        })
+
+        cardDetailInput.forEach((item)=>{
+            item.addEventListener('input', setHeight)
+        })
+
+    function setHeight(){
+            this.style.height = 'auto';
+            this.style.height =  this.scrollHeight + 'px';
+
+        let height = parseFloat(this.style.height);
+
+            if(height > 120) {
+                this.style.overflowY = 'scroll';
+                this.style.height = '120px';
+            }
+        };
     })
 }
+
