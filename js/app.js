@@ -100,7 +100,8 @@ function createNewList(){
             item.addEventListener('input', setHeight)
         })
 
-    function setHeight(){
+        // function to increase height on click
+        function setHeight(){
             this.style.height = 'auto';
             this.style.height =  this.scrollHeight + 'px';
 
@@ -111,6 +112,68 @@ function createNewList(){
                 this.style.height = '120px';
             }
         };
+
+        // Create Elements
+        const fileDiv = document.createElement('div');
+        const fileUL = document.createElement('ul');
+
+        const dateLi = document.createElement('li');
+        const labelLi = document.createElement('li');
+        const attachLi = document.createElement('li');
+
+        // input tag for calendar
+        const dataIcon = document.createElement('input');
+            dataIcon.type = 'datetime-local';
+            dataIcon.id = 'meeting-time';
+            dataIcon.name = 'meeting-time';
+
+        const labelIcon = document.createElement('input');
+        const attachIcon = document.createElement('input');
+    
+        
+
+
+        //Append element to parent
+        todoParentDiv.appendChild(fileDiv);
+        fileDiv.appendChild(fileUL);
+        fileUL.appendChild(dateLi);
+        fileUL.appendChild(labelLi);
+        fileUL.appendChild(attachLi);
+        dateLi.appendChild(dataIcon);
+        labelLi.appendChild(labelIcon);
+        attachLi.appendChild(attachIcon);
+
+        // Set Attributes
+        fileDiv.setAttribute('class', 'file-parent-div');
+        fileUL.setAttribute('class', 'file-wrapper-ul');
+        dateLi.setAttribute('class', 'date-li');
+        labelLi.setAttribute('class', 'label-li');
+        attachLi.setAttribute('class', 'attach-li');
+
+        dataIcon.setAttribute('class', 'date-icon');
+        labelIcon.setAttribute('class', 'fa-solid fa-tag');
+        attachIcon.setAttribute('class', 'fa-solid fa-paperclip');
+
+            const span = document.createElement('span');
+            span.setAttribute('class', 'display-time');
+            dateLi.appendChild(span);
+
+        dataIcon.addEventListener('input', calendarValue)
+
+        function calendarValue(){
+            const calendar = this.value;
+            const date = new Date(calendar);
+
+            const formattedDate = date.toLocaleString('en-GB', {
+                day: 'numeric',
+                weekday: 'short',
+                month: 'short',
+                year: 'numeric'
+            });
+
+            span.textContent = formattedDate;
+            console.log({formattedDate})
+        }
     })
 }
 

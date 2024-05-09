@@ -4,6 +4,7 @@ header {
     width: 100vw;
     height: 3.75em; /*60px*/
     background-color: white;
+    z-index: 99;
 }
 
 /* Hamburger */
@@ -169,11 +170,11 @@ header nav .svg{
     padding: 3px;
     border-radius: 10px;
     transition: all 0.7s ease;
+    position: relative;
 }
 
 .new-card-list .todo-parent ul li {
     width: 100%;
-    /* position: relative; */
 }
 
 
@@ -214,9 +215,46 @@ header nav .svg{
 
 .new-card-list .todo-parent .text-area-two  {
     font-size: 0.8em;
+    margin-bottom: 4em;
     
 }
 
 .new-card-list .todo-parent:focus-within {
     background-color: var(--bg-neutral-100);
+}
+
+/* File Icons section */
+.file-parent-div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.file-parent-div .file-wrapper-ul {
+    display: flex;
+    gap: 10px;
+    border: 2px solid orange;
+}
+
+.file-parent-div .file-wrapper-ul i{
+    color: var(--bg-neutral-600);
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+
+}
+
+.file-parent-div .file-wrapper-ul .date-icon {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+    border: none;
+}
+
+.file-parent-div .file-wrapper-ul .display-time {
+    font-size: 10px;
+    white-space: nowrap;
+    color: var(--main-blue-light);
+    font-style: italic;
 }
