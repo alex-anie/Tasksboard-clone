@@ -121,13 +121,23 @@ function createNewList(){
         const labelLi = document.createElement('li');
         const attachLi = document.createElement('li');
 
+        // Set Attribues
+        labelLi.setAttribute('class', 'label-li')
+
         // input tag for calendar
         const dataIcon = document.createElement('input');
             dataIcon.type = 'datetime-local';
             dataIcon.id = 'meeting-time';
             dataIcon.name = 'meeting-time';
 
+        // input tag for the label
         const labelIcon = document.createElement('input');
+            labelIcon.setAttribute('type', 'button');
+            labelIcon.setAttribute('class', 'label-icon');
+
+
+
+        // 
         const attachIcon = document.createElement('input');
     
         
@@ -147,12 +157,9 @@ function createNewList(){
         fileDiv.setAttribute('class', 'file-parent-div');
         fileUL.setAttribute('class', 'file-wrapper-ul');
         dateLi.setAttribute('class', 'date-li');
-        labelLi.setAttribute('class', 'label-li');
-        attachLi.setAttribute('class', 'attach-li');
+        
 
         dataIcon.setAttribute('class', 'date-icon');
-        labelIcon.setAttribute('class', 'fa-solid fa-tag');
-        attachIcon.setAttribute('class', 'fa-solid fa-paperclip');
 
             const span = document.createElement('span');
             span.setAttribute('class', 'display-time');
@@ -174,6 +181,78 @@ function createNewList(){
             span.textContent = formattedDate;
             console.log({formattedDate})
         }
+
+            labelLi.addEventListener('click', (event)=>{
+                event.stopPropagation();
+              // Creating pop up model for label button
+                const bodyElement = document.querySelector('body');
+
+                const cardLabel = document.createElement('section');
+                const cardHeading = document.createElement('div');
+                const cardBody = document.createElement('div');
+                const cardFooter = document.createElement('div');
+                const img = document.createElement('img');
+                const h1 = document.createElement('h1');
+                const para1 = document.createElement('p');
+                const para2 = document.createElement('p');
+                const linkTag1 = document.createElement('a');
+                const linkTag2 = document.createElement('a');
+
+                //applying set attributes
+                bodyElement.setAttribute('class', 'active');
+
+                cardLabel.setAttribute('class', 'card-label active');
+                h1.setAttribute('class', 'card-label-h1');
+                cardHeading.setAttribute('class', 'card-heading');
+                cardBody.setAttribute('class', 'card-body');
+                cardFooter.setAttribute('class', 'card-footer');
+                img.setAttribute('class', 'card-label-image');
+                para1.setAttribute('class', 'para-one');
+                para2.setAttribute('class', 'para-two');
+                linkTag1.setAttribute('class', 'link-tag-one');
+                linkTag2.setAttribute('class', 'link-tag-two');
+
+                // appending elements to the body of the document
+
+                bodyElement.appendChild(cardLabel);
+                cardLabel.appendChild(cardHeading);
+                cardLabel.appendChild(cardBody);
+                cardBody.appendChild(img);
+                cardLabel.appendChild(cardFooter);
+                cardHeading.appendChild(h1);
+                cardHeading.appendChild(para1);
+                cardHeading.appendChild(para2);
+                cardFooter.appendChild(linkTag1);
+                cardFooter.appendChild(linkTag2);
+                
+
+                //adding href to links
+                linkTag1.href = 'https://tasksboard.com/premium/upgrade';
+                linkTag2.href = 'https://tasksboard.com/premium';
+
+                //Setting the card image attributes
+                img.src = `images/label.png`
+
+                // Applying text content
+                h1.textContent = 'Task labels is a Premium Feature';
+                para1.textContent = 'Easily organize and prioritize your tasks with labels so';
+                para2.textContent = "you'll always know exactly what to work on next";
+                linkTag1.textContent = "Try Premium for free";
+                linkTag2.textContent = "Learn more about Premium";
+
+                // const bodyElement = document.querySelector('body');  
+                bodyElement.addEventListener('click', ()=>{
+                    bodyElement.classList.remove('active');
+                    cardLabel.classList.remove('active');
+                })
+
+            })
+
+            
+
     })
+
+    
+
 }
 
